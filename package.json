@@ -1,0 +1,39 @@
+{
+  "name": "express-api-ready",
+  "version": "1.0.0",
+  "private": true,
+  "main": "index.js",
+  "config": {
+    "prettier": "--single-quote --write"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "dev": "nodemon $npm_package_main",
+    "start": "node $npm_package_main",
+    "format": "prettier $npm_package_config_prettier '**/*.js'",
+    "precommit": "lint-staged"
+  },
+  "lint-staged": {
+    "*.js": [
+      "npm run format",
+      "git add"
+    ]
+  },
+  "dependencies": {
+    "body-parser": "^1.18.2",
+    "compression": "^1.7.1",
+    "cors": "^2.8.4",
+    "express": "^4.16.2",
+    "helmet": "^3.8.2",
+    "http-errors": "^1.6.2",
+    "morgan": "^1.9.0",
+    "winston": "^3.0.0-rc0"
+  },
+  "devDependencies": {
+    "dotenv": "^4.0.0",
+    "husky": "^0.14.3",
+    "lint-staged": "^4.2.3",
+    "nodemon": "^1.12.1",
+    "prettier": "^1.7.4"
+  }
+}
